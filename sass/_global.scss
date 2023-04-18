@@ -14,3 +14,26 @@ body  {
   padding-right: 60px;
   padding-left: 60px;
 }
+
+.link-arrow {
+  font-weight: 700;
+  font-size: 14px;
+  color: #24A3FF;
+
+  .arrow {
+    border: solid #24A3FF;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+  }
+}
+
+.gradient-title {
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
