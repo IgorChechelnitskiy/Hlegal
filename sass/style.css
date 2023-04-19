@@ -186,20 +186,14 @@ header:after {
 }
 .header__hero-arrow {
   align-self: center;
-  border: 2px solid #fff;
-  border-radius: 50%;
   width: 42px;
   height: 42px;
-  padding: 10px 0 6px 16px;
-  margin-bottom: 100px;
   z-index: 2;
+  background: url("/img/scroll_sprites.png") -72px -10px;
 }
-.header__hero-arrow i {
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 11px;
-  transform: rotate(45deg);
+.header__hero-arrow:hover {
+  background: url("/img/scroll_sprites.png") -10px -10px;
+  opacity: 1;
 }
 .header__hero-offer {
   display: flex;
@@ -243,6 +237,16 @@ header:after {
   gap: 60px;
   margin: 60px 0;
   color: #fff;
+}
+.header__cards-items .cards-item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 92px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 14px;
 }
 .header__cards-items .cards-item-subtitle h3 {
   margin: 30px 0 15px;
