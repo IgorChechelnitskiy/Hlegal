@@ -1,12 +1,18 @@
-body  {
+body {
   font-family: 'Montserrat', sans-serif;
+
   h2 {
     font-weight: 700;
     font-size: 38px;
   }
+
   a {
     text-decoration: none;
     color: #fff;
+  }
+
+  a:hover {
+    opacity: 0.7;
   }
 }
 
@@ -19,6 +25,8 @@ body  {
   font-weight: 700;
   font-size: 14px;
   color: #24A3FF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
   .arrow {
     border: solid #24A3FF;
@@ -31,9 +39,16 @@ body  {
     transform: rotate(-45deg);
   }
 }
+.link-arrow:hover{
+  opacity: 0.7;
+}
 
 .gradient-title {
   background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.facebook:hover {
+  opacity: 0.7;
 }
