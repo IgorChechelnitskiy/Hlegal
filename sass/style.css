@@ -9,9 +9,6 @@ body a {
   text-decoration: none;
   color: #fff;
 }
-body a:hover {
-  opacity: 0.7;
-}
 
 .center {
   padding-right: 60px;
@@ -36,7 +33,10 @@ body a:hover {
 }
 
 .link-arrow:hover {
-  opacity: 0.7;
+  color: #F0145A;
+}
+.link-arrow:hover i {
+  border-color: #F0145A;
 }
 
 .gradient-title {
@@ -45,10 +45,105 @@ body a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.facebook:hover {
-  opacity: 0.7;
+@media screen and (min-width: 1920px) {
+  .center {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+  .main_partners-grid {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .main_partners-grid .grid-logo:nth-child(1) {
+    border-top-left-radius: 12px;
+  }
+  .main_partners-grid .grid-logo:nth-child(4) {
+    border-top-right-radius: 12px;
+  }
+  .main_partners-grid .grid-logo:nth-child(9) {
+    border-bottom-left-radius: 12px;
+  }
+  .main_partners-grid .grid-logo:nth-child(12) {
+    border-bottom-right-radius: 12px;
+  }
 }
-
+@media screen and (min-width: 1024px) {
+  .center {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .center {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .header__hero-offer {
+    flex-direction: column;
+  }
+  .header__hero-offer .offer-line {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 22px 0 35px;
+  }
+  .offer-items {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .header .header__cards-items {
+    grid: 1fr 1fr 1fr/repeat(2, 1fr);
+  }
+  .main .slide {
+    flex-direction: column;
+  }
+  .main .slide .slide-img {
+    min-height: 500px;
+  }
+  .main__partners .main_partners-grid {
+    grid: repeat(4, 1fr)/repeat(3, 33.333%);
+    margin-bottom: 0;
+  }
+  body .main .main__publications {
+    padding-top: 30px;
+  }
+  body .main .main__publications .main__publications-cards {
+    flex-wrap: wrap;
+  }
+  .main .main__publications-cards {
+    grid: 1fr/1fr 1fr;
+    padding: 0;
+  }
+  body .main .main__publications-cards .publications-card:last-of-type {
+    grid-column: span 2;
+  }
+  .header__navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .header__navigation .navigation-contacts {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__navigation .navigation-contacts .navigation-contacts-logo {
+    order: 2;
+    margin: 30px 0 30px;
+  }
+  .header__navigation .navigation-contacts .navigation-contacts-info {
+    order: 1;
+    padding: 0;
+  }
+  .header .header__navigation .navigation-list {
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .header .header__navigation .navigation-list .navigation-items {
+    padding: 0;
+  }
+}
 header {
   position: relative;
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
@@ -96,6 +191,7 @@ header:after {
   display: flex;
   gap: 6px;
   align-items: center;
+  padding-bottom: 36px;
   z-index: 2;
 }
 .header__navigation .navigation-contacts-info .language {
@@ -110,7 +206,6 @@ header:after {
   background: #F0145A;
   border-radius: 8px;
   padding: 5px 7px;
-  opacity: 1;
 }
 .header__navigation .navigation-contacts-info .info-address {
   display: flex;
@@ -141,9 +236,13 @@ header:after {
   border-radius: 50%;
   background: #E6E6F0;
 }
+.header__navigation .navigation-contacts-info .facebook svg:hover path {
+  fill: #F0145A;
+}
 .header__navigation .navigation-list {
   display: flex;
   justify-content: flex-end;
+  margin-top: -30px;
 }
 .header__navigation .navigation-items {
   list-style: none;
@@ -157,12 +256,13 @@ header:after {
   z-index: 2;
 }
 .header__navigation .navigation-items .navigation-item a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.header__navigation .navigation-items .navigation-item a:active {
   color: #F0145A;
   text-decoration: underline;
-  opacity: 1;
-}
-.header__navigation .navigation-items .navigation-item a:visited {
-  color: #24A3FF;
 }
 
 .header-image {
@@ -180,7 +280,7 @@ header:after {
 .header__hero-title {
   z-index: 2;
   align-self: center;
-  padding-top: 200px;
+  padding-top: 230px;
   margin-bottom: 305px;
   color: #fff;
 }
@@ -193,13 +293,11 @@ header:after {
 }
 .header__hero-arrow:hover {
   background: url("/img/scroll_sprites.png") -10px -10px;
-  opacity: 1;
 }
 .header__hero-offer {
   display: flex;
   align-items: center;
-  margin: 0 180px;
-  color: #B3B3BA;
+  margin: 75px 0;
 }
 .header__hero-offer .offer-items {
   list-style: none;
@@ -212,6 +310,12 @@ header:after {
 .header__hero-offer .offer-items .offer-item {
   margin-bottom: 30px;
 }
+.header__hero-offer .offer-items .offer-item a {
+  color: #B3B3BA;
+}
+.header__hero-offer .offer-items .offer-item a:hover {
+  color: #F0145A;
+}
 .header__hero-offer .offer-items .offer-item:first-child {
   background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
   -webkit-background-clip: text;
@@ -223,6 +327,15 @@ header:after {
   background: rgba(255, 255, 255, 0.3);
   margin: 0 60px;
 }
+.header__hero-offer .offer-desc .offer-desc-title {
+  font-size: 30px;
+  color: #fff;
+}
+.header__hero-offer .offer-desc .offer-desc-text {
+  font-size: 19px;
+  color: #fff;
+}
+
 .header__cards-title {
   margin: 10px 0 0;
 }
@@ -254,6 +367,9 @@ header:after {
   font-size: 22px;
   color: #24A3FF;
 }
+.header__cards-items .cards-item-subtitle h3:hover {
+  color: #F0145A;
+}
 
 /*#region MAIN*/
 .main__slider {
@@ -263,15 +379,21 @@ header:after {
 }
 .main__slider .slide {
   display: flex;
-  gap: 30px;
   background: #F5F5FA;
   border-radius: 12px;
 }
+.main__slider .slide .slide-img {
+  min-width: 400px;
+  background-image: url(/img/team.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .main__slider .slide .slide-desk {
-  margin: 30px 0;
+  margin: 30px;
 }
 .main__slider .slide .slide-desk .slide-desk-title {
-  margin-top: 5px;
+  margin: 5px 30px 0 0;
 }
 .main__slider .slide .slide-desk .slide-desk-position {
   font-weight: 700;
@@ -313,8 +435,7 @@ header:after {
 
 .main_partners-grid {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(3, 1fr);
+  grid: repeat(3, 1fr)/repeat(4, 25%);
   margin-bottom: 30px;
 }
 .main_partners-grid .grid-logo {
@@ -359,18 +480,23 @@ header:after {
   background: #000;
 }
 
+.main__publications {
+  background: #F5F5FA;
+}
+
 .main__publications-title {
   margin: 10px 0 30px;
 }
 
 .main__publications-cards {
-  display: flex;
+  display: grid;
+  grid: 1fr/repeat(3, 33%);
   gap: 30px;
-  width: 100%;
-  margin-bottom: 30px;
+  padding: 0 60px 30px 0;
 }
 .main__publications-cards .publications-card {
-  width: 33%;
+  width: 100%;
+  background: #fff;
 }
 .main__publications-cards .publications-card .card-image img {
   object-fit: cover;
@@ -382,6 +508,9 @@ header:after {
   font-weight: 700;
   color: #24a3ff;
   margin: 30px 0 15px;
+}
+.main__publications-cards .publications-card .card-subtitle:hover {
+  color: #F0145A;
 }
 .main__publications-cards .publications-card .card-date {
   font-weight: 700;
@@ -403,6 +532,11 @@ header:after {
 }
 
 /*#endregion*/
+.footer {
+  background: #F5F5FA;
+  padding-bottom: 30px;
+}
+
 .footer__line {
   display: flex;
   margin-bottom: 30px;
@@ -414,8 +548,8 @@ header:after {
 }
 
 .footer__contacts {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid: 1fr 1fr/1fr 1fr;
 }
 .footer__contacts .footer__contacts-desc {
   display: flex;
@@ -447,10 +581,19 @@ header:after {
   border-radius: 50%;
   background: #B3B3BA;
 }
+.footer__contacts .footer__contacts-desc .contacts-address .on-map:hover {
+  color: #F0145A;
+}
+.footer__contacts .footer__contacts-tel {
+  grid-column: span 2;
+}
 .footer__contacts .contacts-tel {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.footer__contacts .contacts-tel .facebook svg:hover path {
+  fill: #F0145A;
 }
 .footer__contacts .contacts-tel .contact-tel {
   display: flex;
@@ -480,7 +623,12 @@ header:after {
   border-radius: 50%;
   background: #B3B3BA;
 }
+.footer__contacts .contacts-tel .e-mail:hover {
+  color: #F0145A;
+}
 .footer__contacts .footer__contacts-copyrights {
+  display: flex;
+  justify-content: end;
   color: #B3B3BA;
 }
 

@@ -1,3 +1,8 @@
+.footer {
+  background: #F5F5FA;
+  padding-bottom: 30px;
+}
+
 .footer__line {
   display: flex;
   margin-bottom: 30px;
@@ -10,8 +15,8 @@
 }
 
 .footer__contacts {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
 
   .footer__contacts-desc {
     display: flex;
@@ -45,13 +50,25 @@
         border-radius: 50%;
         background: #B3B3BA;
       }
+
+      .on-map:hover {
+        color: #F0145A;
+      }
     }
+  }
+
+  .footer__contacts-tel {
+    grid-column: span 2;
   }
 
   .contacts-tel {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    .facebook svg:hover path {
+      fill: #F0145A;
+    }
 
     .contact-tel {
       display: flex;
@@ -84,9 +101,15 @@
       border-radius: 50%;
       background: #B3B3BA;
     }
+
+    .e-mail:hover {
+      color: #F0145A;
+    }
   }
 
   .footer__contacts-copyrights {
+    display: flex;
+    justify-content: end;
     color: #B3B3BA;
   }
 }

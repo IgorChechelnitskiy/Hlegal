@@ -48,6 +48,7 @@ header:after {
         display: flex;
         gap: 6px;
         align-items: center;
+        padding-bottom: 36px;
         z-index: 2;
 
         .language {
@@ -63,7 +64,6 @@ header:after {
           background: #F0145A;
           border-radius: 8px;
           padding: 5px 7px;
-          opacity: 1;
         }
 
         .info-address {
@@ -98,12 +98,17 @@ header:after {
           border-radius: 50%;
           background: #E6E6F0;
         }
+
+        .facebook svg:hover path {
+          fill: #F0145A;
+        }
       }
     }
 
     .navigation-list {
       display: flex;
       justify-content: flex-end;
+      margin-top: -30px;
     }
 
     .navigation-items {
@@ -118,17 +123,19 @@ header:after {
       z-index: 2;
 
       .navigation-item a:hover {
-        color: #F0145A;
         text-decoration: underline;
-        opacity: 1;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 2px;
       }
 
-      .navigation-item a:visited {
-        color: #24A3FF;
+      .navigation-item a:active {
+        color: #F0145A;
+        text-decoration: underline;
       }
     }
   }
 }
+
 
 //============================================================================= header_image
 
@@ -152,7 +159,7 @@ header:after {
     &-title {
       z-index: 2;
       align-self: center;
-      padding-top: 200px;
+      padding-top: 230px;
       margin-bottom: 305px;
       color: #fff;
     }
@@ -167,14 +174,13 @@ header:after {
 
     &-arrow:hover {
       background: url("/img/scroll_sprites.png") -10px -10px;
-      opacity: 1;
     }
 
     &-offer {
       display: flex;
       align-items: center;
-      margin: 0 180px;
-      color: #B3B3BA;
+      margin: 75px 0;
+
 
       .offer-items {
         list-style: none;
@@ -186,6 +192,14 @@ header:after {
 
         .offer-item {
           margin-bottom: 30px;
+
+          a {
+            color: #B3B3BA;
+          }
+        }
+
+        .offer-item a:hover {
+          color: #F0145A;
         }
 
         .offer-item:first-child {
@@ -204,6 +218,15 @@ header:after {
 
       .offer-desc {
 
+        .offer-desc-title {
+          font-size: 30px;
+          color: #fff;
+        }
+
+        .offer-desc-text {
+          font-size: 19px;
+          color: #fff;
+        }
       }
     }
   }
@@ -247,6 +270,10 @@ header:after {
         font-weight: 700;
         font-size: 22px;
         color: #24A3FF;
+      }
+
+      .cards-item-subtitle h3:hover {
+        color: #F0145A;
       }
     }
   }
