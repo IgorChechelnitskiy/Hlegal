@@ -56,6 +56,10 @@
     }
 
     a:hover {
+      opacity: 0.6;
+    }
+
+    a:active {
       opacity: 1;
     }
   }
@@ -70,6 +74,7 @@
   color: #323264;
   margin-bottom: 30px;
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 .main_partners-grid {
