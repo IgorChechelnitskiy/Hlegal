@@ -37,23 +37,29 @@
             </div>
         </article>
         <article class="navigation-list">
-            <ul class="navigation-items">
-                <li class="navigation-item">
-                    <a href="">about us</a>
-                </li>
-                <li class="navigation-item">
-                    <a href="">services</a>
-                </li>
-                <li class="navigation-item">
-                    <a href="">team</a>
-                </li>
-                <li class="navigation-item">
-                    <a href="">publications</a>
-                </li>
-                <li class="navigation-item">
-                    <a href="">contact</a>
-                </li>
-            </ul>
+            <input type="checkbox" class="visually-hidden" id="nav-toggler">
+            <label for="nav-toggler" class="header__toggler">
+               <span></span><span></span><span></span>
+            </label>
+            <div class="navigation-list-items">
+                <ul class="navigation-items">
+                    <li class="navigation-item">
+                        <a href="" class="selected">about us</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="">services</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="">team</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="">publications</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="">contact</a>
+                    </li>
+                </ul>
+            </div>
         </article>
     </section>
     <section class="header__hero">
@@ -62,7 +68,7 @@
         </a>
         <article class="header__hero-offer" id="offer">
             <ul class="offer-items">
-                <li class="offer-item">Consistent</li>
+                <li class="offer-item"><a href="#">Consistent</a></li>
                 <li class="offer-item"><a href="#">Customer oriented</a></li>
                 <li class="offer-item"><a href="#">Innovative</a></li>
                 <li class="offer-item"><a href="#">Business oriented</a></li>

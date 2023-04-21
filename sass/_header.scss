@@ -52,6 +52,7 @@ header:after {
         z-index: 2;
 
         .language {
+          box-sizing: border-box;
           text-transform: uppercase;
           margin-left: 7px;
           margin-right: 7px;
@@ -109,28 +110,31 @@ header:after {
       display: flex;
       justify-content: flex-end;
       margin-top: -30px;
-    }
 
-    .navigation-items {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: 15px;
-      margin: 0;
-      font-weight: 700;
-      line-height: 20px;
-      z-index: 2;
+      .navigation-list-items {
+        z-index: 2;
 
-      .navigation-item a:hover {
-        text-decoration: underline;
-        text-underline-offset: 6px;
-        text-decoration-thickness: 2px;
-      }
+        .navigation-items {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          gap: 15px;
+          margin: 0;
+          font-weight: 700;
+          line-height: 20px;
 
-      .navigation-item a:active {
-        color: #F0145A;
-        text-decoration: underline;
+          .navigation-item a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 2px;
+          }
+
+          .navigation-item a:active {
+            color: #F0145A;
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -158,7 +162,7 @@ header:after {
 
     &-title {
       z-index: 2;
-      align-self: center;
+      text-align: center;
       padding-top: 230px;
       margin-bottom: 305px;
       color: #fff;
@@ -207,6 +211,7 @@ header:after {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+  
       }
 
       span {
