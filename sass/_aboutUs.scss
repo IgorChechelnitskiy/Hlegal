@@ -2,24 +2,14 @@
 
 header {
   position: relative;
-  background: none;
 
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
   margin-bottom: 60px;
 }
 
-header:before {
-  display: none;
-}
-
-header:after {
-  display: none;
-}
-
-.center {
-  padding-left: 180px;
-  padding-right: 180px;
+.header__about {
+  background: none;
 }
 
 //============================================================================= header_navigation
@@ -136,13 +126,13 @@ header:after {
 
   //============================================================================= header_hero
 
-  &__hero {
+  .hero-about {
     display: flex;
     flex-direction: row;
     gap: 30px;
     margin-bottom: 60px;
 
-    &-desc {
+    .header__hero-desc {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -159,7 +149,7 @@ header:after {
       }
     }
 
-    &-achievement {
+    .header__hero-achievement {
       display: flex;
       width: 70%;
       padding-left: 30px;
@@ -199,24 +189,31 @@ header:after {
 }
 
 //============================================================================= main_team
-.team-poster-img {
-  width: 100%;
+.main__team-poster {
+  display: flex;
   position: relative;
-}
 
-.team-poster-title {
-  position: absolute;
-  top: 60%;
-  left: 34%;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  font-weight: 700;
-  font-size: 96px;
-  letter-spacing: 63px;
-  z-index: 1;
-  opacity: 0.8;
-  text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.8);
+  .team-poster-img {
+    width: 100%;
+  }
+
+
+  .team-poster-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 96px;
+    letter-spacing: 63px;
+    z-index: 1;
+    opacity: 0.8;
+    text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+    margin: 0;
+  }
 }
 
 .main__team-desc {
@@ -247,28 +244,30 @@ header:after {
     text-transform: uppercase;
   }
 
-  .slide-items {
-    border-radius: 12px;
+  .slide-item {
+    display: grid;
+    grid:  1fr / repeat(4, 1fr);
+    gap: 40px;
+    background-image: none;
+    padding: 0 60px;
 
-    .slide-item {
+    .slide-img {
       display: flex;
-      gap: 40px;
-      justify-content: space-between;
-      background-image: none;
-      padding: 0 60px;
+      width: 100%;
+      justify-content: center;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      background: #fff;
+      border-radius: 12px;
 
-      .slide-img {
-        display: flex;
-        justify-content: center;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background: #fff;
-        min-width: 300px;
-        border-radius: 12px;
+      img {
+        max-width: 100%;
       }
+
     }
   }
 }
+
 
 //============================================================================= footer
 
@@ -276,3 +275,184 @@ header:after {
   padding-left: 60px;
   padding-right: 60px;
 }
+
+//====================================================================Screen 1920px
+
+@media screen and (min-width: 1920px) {
+  .header .center-about {
+    padding-right: 280px;
+    padding-left: 280px;
+  }
+  .main .center-about {
+    padding-right: 280px;
+    padding-left: 280px;
+  }
+
+
+  .header {
+    &__navigation {
+      padding: 50px 160px 60px 160px;
+    }
+  }
+  .footer {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+
+//====================================================================Screen 1024px
+
+@media screen and (min-width: 1024px) {
+  .center-about {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+
+//====================================================================Screen 768px
+
+
+@media screen and (max-width: 768px) {
+  .center-about {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  .header__hero {
+    flex-direction: column;
+
+    &-achievement:before {
+      height: 90%;
+    }
+  }
+
+  .main__team-poster .team-poster-title {
+    font-size: 46px;
+  }
+
+  .main__team-desc {
+    display: flex;
+    flex-direction: column;
+
+    .team-desc-subtitle {
+      margin-left: 0;
+    }
+  }
+}
+
+//====================================================================Screen 375px
+//
+@media screen and (max-width: 375px) {
+  .center-about {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .header__about {
+    margin-bottom: 0;
+  }
+
+  .navigation-about .navigation-contacts .navigation-contacts-logo {
+    margin: 15px 0 15px 50px;
+  }
+
+  .navigation-about .navigation-contacts .navigation-contacts-logo .logo img {
+    width: 50%;
+  }
+
+
+  .navigation-contacts-info {
+    padding: 0;
+    justify-content: center;
+  }
+
+
+  .navigation-list-about .header__toggler-about span {
+    width: 100%;
+    height: 2px;
+    background: #323264;
+    display: block;
+    position: absolute;
+    left: 360px;
+    top: -43px;
+    transform: translateY(-50%);
+
+    &:nth-child(2) {
+      width: 18px;
+      top: -33px;
+      left: 369px;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(3) {
+      top: -38px;
+    }
+
+    .curtain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #323264;
+      opacity: 0.7;
+      display: none;
+      z-index: 2;
+    }
+
+    #nav-toggler:checked ~ .navigation-list-items {
+      display: flex;
+    }
+
+    #nav-toggler:checked ~ .curtain {
+      display: flex;
+      overflow: hidden;
+      pointer-events: none;
+    }
+  }
+
+
+  .header__about .hero-about {
+    flex-direction: column;
+  }
+
+  .header .header__hero {
+    margin-bottom: 30px;
+  }
+
+  .header__hero-title {
+    z-index: 1;
+  }
+
+  .header__hero-achievement:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 90%;
+    background: #E6E6F0;
+  }
+  .achievement-item-text {
+    width: 130%;
+  }
+
+  .main__team-poster .team-poster-title {
+    font-size: 36px;
+    letter-spacing: 13px;
+  }
+
+  .main__team-desc {
+    margin-top: 30px;
+  }
+
+  .slide-items .slide-item {
+    display: flex;
+  }
+
+  .slide-items .slide-item .slide-img:nth-child(n+2) {
+    display: none;
+  }
+}
+
+

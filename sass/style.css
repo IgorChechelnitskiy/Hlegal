@@ -15,6 +15,11 @@ body a {
   padding-left: 60px;
 }
 
+.center-about {
+  padding-left: 180px;
+  padding-right: 180px;
+}
+
 .link-arrow {
   font-weight: 700;
   font-size: 14px;
@@ -163,7 +168,7 @@ body a {
     padding-left: 30px;
   }
   .header .header__navigation {
-    padding-top: 0;
+    padding: 0;
     width: 100%;
     margin: 0 -30px;
   }
@@ -199,9 +204,9 @@ body a {
   .header .header__navigation .navigation-list .navigation-list-items {
     position: fixed;
     left: 3%;
-    top: 50%;
+    top: 34%;
     width: 94%;
-    height: 60%;
+    height: 70%;
     background: #fff;
     display: none;
     flex-direction: column;
@@ -267,7 +272,21 @@ body a {
   .header__toggler span:nth-child(3) {
     top: -50px;
   }
+  .curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #323264;
+    opacity: 0.7;
+    display: none;
+    z-index: 2;
+  }
   #nav-toggler:checked ~ .navigation-list-items {
+    display: flex;
+  }
+  #nav-toggler:checked ~ .curtain {
     display: flex;
   }
   #nav-toggler:checked ~ .navigation-list-items > ul > li > .selected {
@@ -281,9 +300,9 @@ body a {
   }
   #nav-toggler:checked ~ .header__toggler span {
     position: fixed;
-    top: 361px;
+    top: 264px;
     left: 335px;
-    width: 6%;
+    width: 7%;
     background: #EC6F5D;
     z-index: 10;
     transform: translate(-50%, -50%) rotate(225deg);
@@ -291,6 +310,9 @@ body a {
   #nav-toggler:checked ~ .header__toggler span:nth-child(2) {
     transform: translate(-50%, -50%) rotate(-225deg);
     background: #EC6F5D;
+  }
+  .header__hero .header__hero-title {
+    padding-top: 125px;
   }
   .header__hero .header__hero-offer {
     margin-bottom: 30px;
@@ -301,6 +323,8 @@ body a {
   }
   body .header .header__cards-items {
     grid: repeat(6, 1fr)/1fr;
+    gap: 0;
+    margin-bottom: 0;
   }
   .main .main__slider .slide .slide-img {
     min-width: 100%;
@@ -315,10 +339,11 @@ body a {
     display: none;
   }
   .main .main__publications .main__publications-cards {
-    grid: repeat(3, 1fr)/1fr;
+    display: flex;
+    flex-direction: column;
   }
-  .main .main__publications .main__publications-cards .publications-card:last-of-type {
-    grid-column: span 1;
+  body .footer {
+    padding: 0 30px 30px 30px;
   }
   .footer__line {
     padding-top: 30px;
@@ -356,8 +381,12 @@ body a {
   .footer__contacts-copyrights {
     order: 3;
   }
+  .footer__contacts-copyrights span {
+    width: 100%;
+    text-align: center;
+  }
 }
-header {
+body header {
   position: relative;
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   border-bottom-right-radius: 12px;
@@ -496,7 +525,7 @@ header:after {
 .header__hero-title {
   z-index: 2;
   text-align: center;
-  padding-top: 230px;
+  padding-top: 180px;
   margin-bottom: 305px;
   color: #fff;
 }
@@ -656,7 +685,6 @@ header:after {
 .main_partners-grid {
   display: grid;
   grid: repeat(3, 1fr)/repeat(4, 25%);
-  margin-bottom: 30px;
 }
 .main_partners-grid .grid-logo {
   display: flex;
@@ -703,6 +731,7 @@ header:after {
 
 .main__publications {
   background: #F5F5FA;
+  padding-top: 30px;
 }
 
 .main__publications-title {
@@ -728,7 +757,7 @@ header:after {
 .main__publications-cards .publications-card .card-subtitle {
   font-weight: 700;
   color: #24a3ff;
-  margin: 30px 0 15px;
+  margin: 30px 30px 15px;
 }
 .main__publications-cards .publications-card .card-subtitle:hover {
   color: #F0145A;
@@ -737,6 +766,7 @@ header:after {
   font-weight: 700;
   font-size: 12px;
   color: #b3b3b3;
+  margin: 0 30px;
 }
 .main__publications-cards .publications-card .card-line {
   display: flex;
@@ -750,6 +780,8 @@ header:after {
 }
 .main__publications-cards .publications-card .card-desc {
   font-size: 14px;
+  padding: 0 30px 30px;
+  margin: 15px 0 0;
 }
 
 /*#endregion*/
@@ -855,23 +887,13 @@ header:after {
 
 header {
   position: relative;
-  background: none;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
   margin-bottom: 60px;
 }
 
-header:before {
-  display: none;
-}
-
-header:after {
-  display: none;
-}
-
-.center {
-  padding-left: 180px;
-  padding-right: 180px;
+.header__about {
+  background: none;
 }
 
 .header__navigation {
@@ -966,49 +988,49 @@ header:after {
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
 }
-.header__hero {
+.header .hero-about {
   display: flex;
   flex-direction: row;
   gap: 30px;
   margin-bottom: 60px;
 }
-.header__hero-desc {
+.header .hero-about .header__hero-desc {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.header__hero-desc .header__hero-title {
+.header .hero-about .header__hero-desc .header__hero-title {
   text-align: start;
   margin: 0;
   padding: 0;
 }
-.header__hero-desc .header__hero-text {
+.header .hero-about .header__hero-desc .header__hero-text {
   font-size: 19px;
   line-height: 1.6;
 }
-.header__hero-achievement {
+.header .hero-about .header__hero-achievement {
   display: flex;
   width: 70%;
   padding-left: 30px;
   position: relative;
 }
-.header__hero-achievement .hero-achievement-item span {
+.header .hero-about .header__hero-achievement .hero-achievement-item span {
   font-weight: 700;
   font-size: 36px;
 }
-.header__hero-achievement .hero-achievement-item svg {
+.header .hero-about .header__hero-achievement .hero-achievement-item svg {
   width: 25px;
   height: 26px;
 }
-.header__hero-achievement .hero-achievement-item .hidden {
+.header .hero-about .header__hero-achievement .hero-achievement-item .hidden {
   display: none;
 }
-.header__hero-achievement .achievement-item-text {
+.header .hero-about .header__hero-achievement .achievement-item-text {
   color: #323264;
   padding: 10px 0 40px;
   margin: 0;
 }
-.header__hero-achievement:before {
+.header .hero-about-achievement:before {
   content: "";
   position: absolute;
   top: 0;
@@ -1018,15 +1040,18 @@ header:after {
   background: #E6E6F0;
 }
 
-.team-poster-img {
-  width: 100%;
+.main__team-poster {
+  display: flex;
   position: relative;
 }
-
-.team-poster-title {
+.main__team-poster .team-poster-img {
+  width: 100%;
+}
+.main__team-poster .team-poster-title {
   position: absolute;
-  top: 60%;
-  left: 34%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
   color: #fff;
   text-align: center;
@@ -1035,7 +1060,8 @@ header:after {
   letter-spacing: 63px;
   z-index: 1;
   opacity: 0.8;
-  text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.8);
+  text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+  margin: 0;
 }
 
 .main__team-desc {
@@ -1062,29 +1088,166 @@ header:after {
   padding: 30px 0;
   text-transform: uppercase;
 }
-.main__slider .slide-items {
-  border-radius: 12px;
-}
-.main__slider .slide-items .slide-item {
-  display: flex;
+.main__slider .slide-item {
+  display: grid;
+  grid: 1fr/repeat(4, 1fr);
   gap: 40px;
-  justify-content: space-between;
   background-image: none;
   padding: 0 60px;
 }
-.main__slider .slide-items .slide-item .slide-img {
+.main__slider .slide-item .slide-img {
   display: flex;
+  width: 100%;
   justify-content: center;
   padding-top: 25px;
   padding-bottom: 25px;
   background: #fff;
-  min-width: 300px;
   border-radius: 12px;
+}
+.main__slider .slide-item .slide-img img {
+  max-width: 100%;
 }
 
 .footer {
   padding-left: 60px;
   padding-right: 60px;
+}
+
+@media screen and (min-width: 1920px) {
+  .header .center-about {
+    padding-right: 280px;
+    padding-left: 280px;
+  }
+  .main .center-about {
+    padding-right: 280px;
+    padding-left: 280px;
+  }
+  .header__navigation {
+    padding: 50px 160px 60px 160px;
+  }
+  .footer {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .center-about {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .center-about {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .header__hero {
+    flex-direction: column;
+  }
+  .header__hero-achievement:before {
+    height: 90%;
+  }
+  .main__team-poster .team-poster-title {
+    font-size: 46px;
+  }
+  .main__team-desc {
+    display: flex;
+    flex-direction: column;
+  }
+  .main__team-desc .team-desc-subtitle {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .center-about {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .header__about {
+    margin-bottom: 0;
+  }
+  .navigation-about .navigation-contacts .navigation-contacts-logo {
+    margin: 15px 0 15px 50px;
+  }
+  .navigation-about .navigation-contacts .navigation-contacts-logo .logo img {
+    width: 50%;
+  }
+  .navigation-contacts-info {
+    padding: 0;
+    justify-content: center;
+  }
+  .navigation-list-about .header__toggler-about span {
+    width: 100%;
+    height: 2px;
+    background: #323264;
+    display: block;
+    position: absolute;
+    left: 360px;
+    top: -43px;
+    transform: translateY(-50%);
+  }
+  .navigation-list-about .header__toggler-about span:nth-child(2) {
+    width: 18px;
+    top: -33px;
+    left: 369px;
+    transform: translate(-50%, -50%);
+  }
+  .navigation-list-about .header__toggler-about span:nth-child(3) {
+    top: -38px;
+  }
+  .navigation-list-about .header__toggler-about span .curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #323264;
+    opacity: 0.7;
+    display: none;
+    z-index: 2;
+  }
+  .navigation-list-about .header__toggler-about span #nav-toggler:checked ~ .navigation-list-items {
+    display: flex;
+  }
+  .navigation-list-about .header__toggler-about span #nav-toggler:checked ~ .curtain {
+    display: flex;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .header__about .hero-about {
+    flex-direction: column;
+  }
+  .header .header__hero {
+    margin-bottom: 30px;
+  }
+  .header__hero-title {
+    z-index: 1;
+  }
+  .header__hero-achievement:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 90%;
+    background: #E6E6F0;
+  }
+  .achievement-item-text {
+    width: 130%;
+  }
+  .main__team-poster .team-poster-title {
+    font-size: 36px;
+    letter-spacing: 13px;
+  }
+  .main__team-desc {
+    margin-top: 30px;
+  }
+  .slide-items .slide-item {
+    display: flex;
+  }
+  .slide-items .slide-item .slide-img:nth-child(n+2) {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

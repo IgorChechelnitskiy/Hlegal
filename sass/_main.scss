@@ -80,7 +80,6 @@
 .main_partners-grid {
   display: grid;
   grid:  repeat(3, 1fr) / repeat(4, 25%);
-  margin-bottom: 30px;
 
   .grid-logo {
     display: flex;
@@ -141,6 +140,8 @@
 //============================================================================= main_publications
 .main__publications {
   background: #F5F5FA;
+  padding-top: 30px;
+
 }
 
 .main__publications-title {
@@ -167,7 +168,7 @@
     .card-subtitle {
       font-weight: 700;
       color: #24a3ff;
-      margin: 30px 0 15px;
+      margin: 30px 30px 15px;
     }
 
     .card-subtitle:hover {
@@ -178,6 +179,7 @@
       font-weight: 700;
       font-size: 12px;
       color: #b3b3b3;
+      margin: 0 30px;
     }
 
     .card-line {
@@ -194,6 +196,8 @@
 
     .card-desc {
       font-size: 14px;
+      padding: 0 30px 30px;
+      margin: 15px 0 0;
     }
   }
 }
