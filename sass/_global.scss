@@ -77,7 +77,9 @@ body {
     padding-right: 160px;
     padding-left: 160px;
   }
-
+  .main__partners {
+    margin-bottom: 60px;
+  }
   .main_partners-grid {
     padding-left: 100px;
     padding-right: 100px;
@@ -103,6 +105,10 @@ body {
 //====================================================================Screen 1024px
 
 @media screen and (min-width: 1024px) {
+  body header:after {
+    top: 100.45%;
+  }
+
   .center {
     padding-right: 60px;
     padding-left: 60px;
@@ -112,9 +118,8 @@ body {
 //====================================================================Screen 768px
 
 @media screen and (max-width: 768px) {
-  .center {
-    padding-right: 60px;
-    padding-left: 60px;
+  body header:after {
+    top: 100.32%;
   }
 
   .header__hero-offer {
@@ -148,18 +153,22 @@ body {
       min-height: 500px;
     }
   }
+
   .main__partners .main_partners-grid {
     grid: repeat(4, 1fr) / repeat(3, 33.333%);
     margin-bottom: 0;
   }
+
   body .main .main__publications {
     padding-top: 30px;
 
   }
+
   .main .main__publications-cards {
     grid: 1fr /1fr 1fr;
     padding: 0;
   }
+
   body .main .main__publications-cards .publications-card:last-of-type {
     grid-column: span 2;
   }
@@ -185,6 +194,7 @@ body {
       }
     }
   }
+
   .header .header__navigation .navigation-list {
     justify-content: flex-start;
     margin: 0;
@@ -195,11 +205,34 @@ body {
   }
 }
 
-//====================================================================Screen 375px
 
-@media screen and (max-width: 375px) {
-  .header {
-    overflow: hidden;
+//====================================================================Screen 414px
+
+@media screen and (max-width: 414px) {
+  body .header:before {
+    content: "";
+    position: absolute;
+    top: 100.0%;
+    left: 2.5%;
+    width: 94%;
+    height: 10px;
+    margin: 0 auto;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background: #CACADB;
+  }
+
+  body .header:after {
+    content: "";
+    position: absolute;
+    top: 100.2%;
+    left: 3.5%;
+    width: 92%;
+    height: 10px;
+    margin: 0 auto;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background: #E7E7F2;
   }
 
 
@@ -251,7 +284,7 @@ body {
   .header .header__navigation .navigation-list .navigation-list-items {
     position: fixed;
     left: 3%;
-    top: 34%;
+    top: 50%;
     width: 94%;
     height: 70%;
     background: #fff;
@@ -365,8 +398,8 @@ body {
 
     span {
       position: fixed;
-      top: 264px;
-      left: 335px;
+      top: 484px;
+      left: 353px;
       width: 7%;
       background: #EC6F5D;
       z-index: 10;
@@ -473,4 +506,20 @@ body {
   }
 }
 
+//====================================================================Screen 375px
 
+@media screen and (max-width: 375px) {
+  .header .header__navigation .navigation-list .navigation-list-items {
+    position: fixed;
+    left: 3%;
+    top: 33%;
+  }
+
+  #nav-toggler:checked ~ .header__toggler {
+
+    span {
+      top: 260px;
+      left: 325px;
+    }
+  }
+}

@@ -237,7 +237,7 @@ header {
 }
 
 //============================================================================= main_slider
-.main__slider {
+.slider-about {
   background: #F5F5FA;
 
   .main__slider-title {
@@ -345,19 +345,19 @@ header {
   }
 }
 
-//====================================================================Screen 375px
+//====================================================================Screen 414px
 //
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .center-about {
     padding-right: 30px;
     padding-left: 30px;
   }
 
-  .header__about {
+  body .header__about {
     margin-bottom: 0;
   }
 
-  .navigation-about .navigation-contacts .navigation-contacts-logo {
+  .header__about .navigation-about .navigation-contacts .navigation-contacts-logo {
     margin: 15px 0 15px 50px;
   }
 
@@ -369,6 +369,16 @@ header {
   .navigation-contacts-info {
     padding: 0;
     justify-content: center;
+
+    .info-address-about {
+      display: none !important;
+    }
+
+    .info-address:before,
+    .info-tel:before,
+    .info-tel:after {
+      display: none;
+    }
   }
 
 
@@ -460,4 +470,131 @@ header {
   }
 }
 
+
+//====================================================================Screen 414px
+//
+@media screen and (max-width: 414px) {
+
+  .header__about {
+    overflow: hidden;
+  }
+  .center-about {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .header__about {
+    margin-bottom: 0;
+  }
+
+  .navigation-about .navigation-contacts .navigation-contacts-logo {
+    margin: 15px 0 15px 50px;
+  }
+
+  .navigation-about .navigation-contacts .navigation-contacts-logo .logo img {
+    width: 50%;
+  }
+
+
+  .navigation-contacts-info {
+    padding: 0;
+    justify-content: center;
+  }
+
+
+  .navigation-list-about .header__toggler-about span {
+    width: 100%;
+    height: 2px;
+    background: #323264;
+    display: block;
+    position: absolute;
+    left: 360px;
+    top: -43px;
+    transform: translateY(-50%);
+
+    &:nth-child(2) {
+      width: 18px;
+      top: -33px;
+      left: 369px;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(3) {
+      top: -38px;
+    }
+
+    .curtain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #323264;
+      opacity: 0.7;
+      display: none;
+      z-index: 2;
+    }
+
+    #nav-toggler:checked ~ .navigation-list-items {
+      display: flex;
+    }
+
+    #nav-toggler:checked ~ .curtain {
+      display: flex;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    #nav-toggler:checked ~ .header__toggler {
+
+      span {
+        top: 484px;
+        left: 353px;
+      }
+    }
+  }
+
+
+  .header__about .hero-about {
+    flex-direction: column;
+  }
+
+  .header .header__hero {
+    margin-bottom: 30px;
+  }
+
+  .header__hero-title {
+    z-index: 1;
+  }
+
+  .header__hero-achievement:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 90%;
+    background: #E6E6F0;
+  }
+  .achievement-item-text {
+    width: 130%;
+  }
+
+  .main__team-poster .team-poster-title {
+    font-size: 36px;
+    letter-spacing: 13px;
+  }
+
+  .main__team-desc {
+    margin-top: 30px;
+  }
+
+  .slide-items .slide-item {
+    display: flex;
+  }
+
+  .slide-items .slide-item .slide-img:nth-child(n+2) {
+    display: none;
+  }
+}
 
