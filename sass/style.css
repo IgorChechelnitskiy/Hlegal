@@ -110,6 +110,7 @@ body a {
     gap: 30px;
     width: 100%;
     overflow: hidden;
+    overflow-x: auto;
   }
   .header .header__cards-items {
     grid: 1fr 1fr 1fr/repeat(2, 1fr);
@@ -146,6 +147,7 @@ body a {
   .header__navigation .navigation-contacts .navigation-contacts-logo {
     order: 2;
     margin: 30px 0 30px;
+    z-index: 2;
   }
   .header__navigation .navigation-contacts .navigation-contacts-info {
     order: 1;
@@ -896,6 +898,11 @@ header {
   background: none;
 }
 
+.header__about:before,
+.header__about:after {
+  display: none;
+}
+
 .header__navigation {
   padding: 50px 60px 60px 60px;
 }
@@ -1030,13 +1037,13 @@ header {
   padding: 10px 0 40px;
   margin: 0;
 }
-.header .hero-about-achievement:before {
+.header .hero-about .header__hero-achievement:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 4px;
-  height: 77%;
+  height: 87%;
   background: #E6E6F0;
 }
 
@@ -1141,10 +1148,10 @@ header {
     padding-right: 60px;
     padding-left: 60px;
   }
-  .header__hero {
+  .header__about .header__hero {
     flex-direction: column;
   }
-  .header__hero-achievement:before {
+  .header__about .header__hero-achievement:before {
     height: 90%;
   }
   .main__team-poster .team-poster-title {

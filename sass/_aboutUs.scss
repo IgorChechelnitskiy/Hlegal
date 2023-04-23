@@ -12,6 +12,11 @@ header {
   background: none;
 }
 
+.header__about:before,
+.header__about:after {
+  display: none;
+}
+
 //============================================================================= header_navigation
 
 .header {
@@ -176,13 +181,13 @@ header {
       }
     }
 
-    &-achievement:before {
+    .header__hero-achievement:before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 4px;
-      height: 77%;
+      height: 87%;
       background: #E6E6F0;
     }
   }
@@ -318,7 +323,7 @@ header {
     padding-left: 60px;
   }
 
-  .header__hero {
+  .header__about .header__hero {
     flex-direction: column;
 
     &-achievement:before {
